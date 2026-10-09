@@ -1,0 +1,679 @@
+/*==========================================================
+PÁGINA · EMPRESA (html/empresa.html)
+Hero, nuestra historia, proceso de trabajo, compromiso,
+principios, beneficios, galería y cifras.
+==========================================================*/
+
+
+/*==========================================================
+HERO
+==========================================================*/
+
+.empresa-hero {
+    background-image: url("../../images/tallerChat.webp");
+}
+
+.empresa-hero .overlay {
+    background: linear-gradient(100deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.45) 60%, rgba(0,0,0,.25) 100%);
+}
+
+
+/*==========================================================
+NUESTRA HISTORIA
+==========================================================*/
+
+.empresa-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    /* padding-block, nunca el atajo: esta sección comparte
+       elemento con .container y el atajo le borraría el
+       margen lateral */
+    padding-block: 80px;
+}
+
+.empresa-img img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.empresa-text p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-light);
+    margin-bottom: 25px;
+}
+
+@media (max-width: 1200px) {
+
+    .empresa-intro {
+        padding-block: clamp(50px, 8vw, 80px);
+        gap: clamp(30px, 4vw, 60px);
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .empresa-intro {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/*==========================================================
+NUESTRO PROCESO
+==========================================================*/
+
+#proceso {
+    position: relative;
+    z-index: 30;
+    padding-block: 80px;
+    background: var(--white);
+}
+
+#proceso .section-title {
+    max-width: 750px;
+    margin: 0 auto 90px;
+    text-align: center;
+}
+
+#proceso .section-title span {
+    display: inline-block;
+    color: var(--primary-color);
+    font-size: .85rem;
+    font-weight: var(--fw-medium);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+#proceso .section-title h2 {
+    font-size: var(--font-size-h);
+    margin-bottom: 20px;
+}
+
+#proceso .section-title p {
+    color: #6b6b6b;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: auto;
+}
+
+.timeline {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+    margin-top: 80px;
+}
+
+/* Línea horizontal que une los pasos */
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 72px;
+    left: 8%;
+    width: 84%;
+    height: 2px;
+    background: #e5e5e5;
+    z-index: 0;
+}
+
+.step {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    z-index: 2;
+    transition: .4s;
+}
+
+.step h3 {
+    margin-bottom: 18px;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+.step p {
+    color: #6b6b6b;
+    line-height: 1.8;
+    font-size: .95rem;
+    max-width: 260px;
+    margin: auto;
+}
+
+.step:hover h3 {
+    color: var(--primary-color);
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 35px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    background: var(--white);
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    transition: .35s;
+}
+
+.step:hover .circle {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(122,12,12,.25);
+}
+
+@media (max-width: 1200px) {
+
+    #proceso {
+        padding-block: clamp(55px, 8vw, 80px);
+    }
+
+    #proceso .section-title {
+        margin-bottom: clamp(45px, 7vw, 90px);
+    }
+
+    .timeline {
+        flex-direction: column;
+        gap: 80px;
+        margin-top: clamp(40px, 6vw, 80px);
+    }
+
+    .timeline::before {
+        display: none;
+    }
+
+    .step {
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .circle {
+        width: 74px;
+        height: 74px;
+        margin-bottom: 26px;
+        font-size: 1.5rem;
+    }
+}
+
+
+/*==========================================================
+COMPROMETIDOS CON LA SEGURIDAD Y LA CALIDAD
+==========================================================*/
+
+.commitment {
+    padding-block: 90px;
+    background: var(--white);
+}
+
+.commitment .section-title {
+    max-width: 800px;
+    margin: 0 0 70px;
+    text-align: left;
+}
+
+.commitment-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.commitment-line {
+    width: 3px;
+    min-height: 420px;
+    background: var(--primary-color);
+    border-radius: 999px;
+    flex-shrink: 0;
+}
+
+.commitment-text {
+    max-width: 620px;
+}
+
+.commitment-text p {
+    font-size: 1.1rem;
+    line-height: 2;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.commitment-text p:first-child {
+    font-size: 1.35rem;
+    color: var(--text-color);
+    font-weight: var(--fw-medium);
+}
+
+.commitment-text h3 {
+    margin-top: 50px;
+    text-align: right;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 1200px) {
+
+    .commitment {
+        padding-block: clamp(60px, 9vw, 90px);
+    }
+
+    .commitment-content {
+        flex: 1 1 100%;
+        flex-wrap: wrap;
+        gap: clamp(20px, 3.5vw, 70px);
+    }
+
+    .commitment-line {
+        min-height: 0;
+        align-self: stretch;
+    }
+
+    .commitment-text {
+        max-width: 100%;
+    }
+
+    .commitment-text p {
+        font-size: clamp(1rem, 2.3vw, 1.1rem);
+        line-height: 1.85;
+    }
+
+    .commitment-text p:first-child {
+        font-size: clamp(1.1rem, 2.8vw, 1.35rem);
+    }
+
+    .commitment-text h3 {
+        font-size: clamp(1.1rem, 3vw, 1.5rem);
+        letter-spacing: 3px;
+        margin-top: 35px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    /* La línea vertical roja le robaba ancho al texto */
+    .commitment-line {
+        display: none;
+    }
+
+    .commitment .section-title {
+        margin-bottom: 40px;
+    }
+
+    .commitment-text h3 {
+        text-align: left;
+    }
+}
+
+
+/*==========================================================
+PRINCIPIOS
+==========================================================*/
+
+.principios-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.principios-list {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.principios-content .principios-list {
+    flex: 1;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0;
+}
+
+.principio-row {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    align-items: center;
+    gap: 24px;
+    transition: var(--transition);
+}
+
+.principio-row:hover {
+    padding-left: 10px;
+}
+
+.principio-row .principio-body {
+    border-bottom: 1px solid var(--border-color);
+    margin-right: 40px;
+    padding: 17px 0;
+}
+
+.principio-row:first-child .principio-body {
+    border-top: 1px solid var(--border-color);
+}
+
+.principio-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    justify-self: center;
+    transition: var(--transition);
+}
+
+.principio-row:hover .principio-dot {
+    transform: scale(1.3);
+}
+
+.principio-body h3 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+    color: var(--text-color);
+}
+
+.principio-body p {
+    color: var(--text-light);
+    line-height: 1.7;
+    max-width: 600px;
+    font-size: .95rem;
+}
+
+@media (max-width: 1200px) {
+
+    .principios-content {
+        gap: clamp(30px, 4vw, 50px);
+    }
+}
+
+@media (max-width: 700px) {
+
+    .principio-row {
+        grid-template-columns: 18px 1fr;
+        gap: 16px;
+    }
+
+    .principios-content .principios-list {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .principio-body p {
+        font-size: .95rem;
+    }
+}
+
+
+/*==========================================================
+BENEFICIOS DE LA CERRAJERÍA METÁLICA
+==========================================================*/
+
+.beneficios-cerrajeria {
+    padding-block: 70px;
+    background: var(--white);
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.beneficio-item {
+    padding: 26px 40px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.beneficio-item:nth-child(odd) {
+    border-right: 1px solid var(--border-color);
+}
+
+.beneficio-mark {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.beneficio-item h3 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.beneficio-item p {
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: .95rem;
+}
+
+@media (max-width: 1200px) {
+
+    .beneficio-item {
+        padding: 24px clamp(18px, 3vw, 40px);
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .beneficios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .beneficio-item:nth-child(odd) {
+        border-right: none;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .beneficio-item p {
+        font-size: .95rem;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .beneficio-item {
+        padding: 22px 16px;
+    }
+}
+
+
+/*==========================================================
+GALERÍA
+==========================================================*/
+
+.empresa-galeria {
+    padding-block: 70px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    transition: .4s;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.04);
+}
+
+@media (max-width: 1200px) {
+
+    .empresa-galeria {
+        padding-block: clamp(45px, 7vw, 70px);
+    }
+
+    .galeria-grid {
+        gap: clamp(14px, 3vw, 30px);
+    }
+
+    .galeria-grid img {
+        height: clamp(200px, 34vw, 340px);
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .galeria-grid img {
+        height: 220px;
+    }
+}
+
+
+/*==========================================================
+CIFRAS
+==========================================================*/
+
+.empresa-numeros {
+    background: var(--primary-color);
+    padding-block: 90px;
+}
+
+.empresa-numeros .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    text-align: center;
+}
+
+.numero h2 {
+    color: var(--white);
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    margin-bottom: 12px;
+}
+
+.numero p {
+    color: rgba(255,255,255,.85);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 1200px) {
+
+    .empresa-numeros {
+        padding-block: clamp(55px, 8vw, 90px);
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .empresa-numeros .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+
+    .empresa-numeros .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/*==========================================================
+IMÁGENES LATERALES
+==========================================================*/
+
+.caja2 {
+    display: flex;
+}
+
+.imagenLateral {
+    flex-shrink: 0;
+}
+
+.imagenLateral img {
+    width: 450px;
+    max-width: 100%;
+}
+
+.imagenLateral-doble {
+    display: flex;
+    gap: 16px;
+    width: 780px;
+    max-width: 100%;
+}
+
+.imagenLateral-doble img {
+    width: auto;
+    min-width: 0;
+    flex: 1;
+    height: 560px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+@media (max-width: 1200px) {
+
+    /* .caja2 era un flex sin wrap: texto y foto se quedaban en dos
+       columnas por muy estrecha que fuera la pantalla */
+    .caja2 {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .imagenLateral,
+    .caja2 .imagenLateral {
+        flex: 1 1 100%;
+        flex-shrink: 1;
+        width: 100%;
+        max-width: 450px;
+        margin: 20px auto 0;
+    }
+
+    .imagenLateral-izq {
+        margin: 0 auto 30px;
+    }
+
+    .imagenLateral-doble {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .imagenLateral-doble img {
+        height: clamp(220px, 32vw, 560px);
+    }
+}
+
+@media (max-width: 700px) {
+
+    /* Dos fotos juntas quedaban como tiras altas y estrechas */
+    .imagenLateral-doble {
+        flex-direction: column;
+    }
+
+    .imagenLateral-doble img {
+        height: 230px;
+    }
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://metalesdd.es/</loc>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://metalesdd.es/html/empresa.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://metalesdd.es/html/servicios.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://metalesdd.es/html/proyectos.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://metalesdd.es/html/contacto.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://metalesdd.es/html/aviso-legal.html</loc>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://metalesdd.es/html/privacidad.html</loc>
+        <priority>0.3</priority>
+    </url>
+
+</urlset>

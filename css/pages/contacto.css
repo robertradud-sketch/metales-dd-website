@@ -1,0 +1,222 @@
+/*==========================================================
+PÁGINA · CONTACTO (html/contacto.html)
+Hero, bloque editorial con las vías de contacto y el
+formulario, y banda de horarios.
+
+Nota: este archivo tenía unas 130 líneas del diseño
+anterior de la página (.contacto-grid, .info-card,
+.contacto-side-card...) que ya no existían en el HTML.
+Se han eliminado.
+==========================================================*/
+
+
+/*==========================================================
+HERO
+==========================================================*/
+
+.contacto-hero {
+    background-image: url("../../images/barandilla.webp");
+}
+
+
+/*==========================================================
+BLOQUE EDITORIAL
+==========================================================*/
+
+.contacto-editorial {
+    /* padding-block, nunca el atajo: comparte elemento con
+       .container y el atajo le borraría el margen lateral.
+       Este era justo el fallo que dejaba el texto pegado al
+       borde izquierdo con la pantalla al 150 %. */
+    padding-block: 120px;
+}
+
+.contacto-editorial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+}
+
+.contacto-editorial-left > p {
+    font-size: clamp(1rem, 2.3vw, 1.08rem);
+    line-height: 1.9;
+    color: var(--text-light);
+    max-width: 480px;
+    margin-bottom: 50px;
+}
+
+.contacto-editorial-right .contacto-form-note {
+    font-size: .95rem;
+    color: var(--text-light);
+    margin-bottom: 26px;
+    line-height: 1.7;
+}
+
+@media (max-width: 1200px) {
+
+    .contacto-editorial {
+        padding-block: clamp(60px, 9vw, 120px);
+    }
+
+    .contacto-editorial-grid {
+        grid-template-columns: 1fr;
+        gap: clamp(40px, 6vw, 60px);
+    }
+
+    .contacto-editorial-left > p {
+        max-width: 100%;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .contacto-editorial {
+        padding-block: 70px;
+    }
+}
+
+
+/*==========================================================
+FILA DE DOS CAMPOS DEL FORMULARIO
+==========================================================*/
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+@media (max-width: 700px) {
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/*==========================================================
+VÍAS DE CONTACTO
+==========================================================*/
+
+.contacto-vias {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto-vias li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.contacto-vias li:first-child {
+    border-top: 1px solid var(--border-color);
+}
+
+.via-label {
+    font-family: var(--font-title);
+    font-size: .8rem;
+    font-weight: var(--fw-medium);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-color);
+    white-space: nowrap;
+}
+
+.contacto-vias li a,
+.contacto-vias li .via-valor {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    text-decoration: none;
+    text-align: right;
+    transition: var(--transition);
+}
+
+.contacto-vias li a:hover {
+    color: var(--primary-color);
+}
+
+@media (max-width: 700px) {
+
+    .contacto-vias li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .contacto-vias li a,
+    .contacto-vias li .via-valor {
+        text-align: left;
+    }
+}
+
+
+/*==========================================================
+BANDA DE HORARIOS
+==========================================================*/
+
+.contacto-banda {
+    background: var(--text-color);
+    color: var(--white);
+    padding-block: 70px;
+}
+
+.contacto-banda-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.banda-item {
+    text-align: center;
+    padding: 0 30px;
+    border-left: 1px solid rgba(255,255,255,.15);
+}
+
+.banda-item:first-child {
+    border-left: none;
+}
+
+.banda-item span {
+    display: block;
+    font-family: var(--font-title);
+    font-size: .8rem;
+    font-weight: var(--fw-medium);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary-hover);
+    margin-bottom: 14px;
+}
+
+.banda-item p {
+    font-size: clamp(1.05rem, 2.8vw, 1.3rem);
+    font-weight: var(--fw-medium);
+}
+
+@media (max-width: 1200px) {
+
+    .contacto-banda {
+        padding-block: clamp(50px, 8vw, 70px);
+    }
+
+    .contacto-banda-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+    }
+
+    .banda-item {
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,.15);
+        padding: 30px 0 0;
+    }
+
+    .banda-item:first-child {
+        border-top: none;
+        padding-top: 0;
+    }
+}

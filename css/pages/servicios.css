@@ -1,0 +1,541 @@
+/*==========================================================
+PÁGINA · SERVICIOS (html/servicios.html)
+Hero, intro, placas de servicio, detalle de cada servicio,
+valores y cómo solicitar presupuesto.
+==========================================================*/
+
+
+/*==========================================================
+HERO
+==========================================================*/
+
+.servicios-hero {
+    background-image: url("../../images/WhatsApp Image 2026-07-29 at 15.55.38.webp");
+}
+
+
+/*==========================================================
+INTRO
+==========================================================*/
+
+.services-intro {
+    padding-block: 110px 20px;
+    background: var(--background-color);
+}
+
+@media (max-width: 1200px) {
+
+    .services-intro {
+        padding-block: clamp(70px, 11vw, 110px) 20px;
+    }
+}
+
+
+/*==========================================================
+PLACAS METÁLICAS DE SERVICIO
+==========================================================*/
+
+.services-grid-plates {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+    margin-top: 10px;
+}
+
+.service-plate {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 48px 40px 38px;
+    background:
+        repeating-linear-gradient(135deg, rgba(0,0,0,.02) 0px, rgba(0,0,0,.02) 2px, transparent 2px, transparent 14px),
+        linear-gradient(160deg, #f2f0ee 0%, #e4e1dd 100%);
+    color: var(--text-color);
+    text-decoration: none;
+    clip-path: polygon(0 0, calc(100% - 32px) 0, 100% 32px, 100% 100%, 32px 100%, 0 calc(100% - 32px));
+    overflow: hidden;
+    isolation: isolate;
+    box-shadow: 0 8px 22px rgba(0,0,0,.07);
+    transition: transform .45s cubic-bezier(.22,.85,.3,1), box-shadow .45s ease;
+}
+
+/* Brillo que cruza la placa al pasar el ratón */
+.service-plate::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(115deg, transparent, rgba(255,255,255,.75), transparent);
+    transform: skewX(-20deg);
+    transition: left .75s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.service-plate:hover::before {
+    left: 130%;
+}
+
+.service-plate:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,.14);
+}
+
+.service-plate-rivet {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #ffffff, #9a9a9a 70%);
+    box-shadow: 0 1px 2px rgba(0,0,0,.35);
+    z-index: 2;
+}
+
+.rivet-tl {
+    top: 14px;
+    left: 14px;
+}
+
+.rivet-br {
+    bottom: 14px;
+    right: 14px;
+}
+
+.service-plate-icon {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.5);
+    border: 1.5px solid var(--primary-color);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 26px;
+    transition: all .4s ease;
+}
+
+.service-plate:hover .service-plate-icon {
+    background: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 0 0 6px rgba(122,12,12,.15);
+    transform: rotate(-6deg);
+}
+
+.service-plate h3 {
+    position: relative;
+    z-index: 2;
+    font-size: 1.35rem;
+    margin-bottom: 14px;
+    color: var(--text-color);
+}
+
+.service-plate p {
+    position: relative;
+    z-index: 2;
+    color: var(--text-light);
+    line-height: 1.75;
+    font-size: .95rem;
+    margin-bottom: 22px;
+}
+
+.service-plate-link {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-bottom: 4px;
+    font-size: .9rem;
+    font-weight: var(--fw-semibold);
+    color: var(--primary-color);
+    border-bottom: 1px solid rgba(122,12,12,.3);
+    transition: border-color .35s ease;
+}
+
+.service-plate:hover .service-plate-link {
+    border-color: var(--primary-color);
+}
+
+.service-plate-link i {
+    transition: transform .35s ease;
+}
+
+.service-plate:hover .service-plate-link i {
+    transform: translateX(4px);
+}
+
+@media (max-width: 1000px) {
+
+    .services-grid-plates {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .service-plate {
+        padding: 38px 26px 30px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .services-grid-plates {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .service-plate {
+        padding: 32px 20px 26px;
+    }
+}
+
+
+/*==========================================================
+DETALLE DE CADA SERVICIO
+==========================================================*/
+
+.service-detail {
+    padding-block: 100px;
+    background: var(--background-color);
+}
+
+.service-detail:nth-of-type(even) {
+    background: var(--white);
+}
+
+.service-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+/* Filas invertidas: la foto pasa a la derecha */
+.service-detail.reverse .service-detail-grid {
+    direction: rtl;
+}
+
+.service-detail.reverse .service-detail-grid > * {
+    direction: ltr;
+}
+
+.service-detail-img {
+    min-width: 0;
+}
+
+.service-detail-img img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.service-detail-img img:hover {
+    transform: translateY(-6px);
+}
+
+.service-detail-text span {
+    display: inline-block;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: var(--fw-medium);
+    font-size: .85rem;
+    margin-bottom: 18px;
+}
+
+.service-detail-text h2 {
+    font-size: clamp(1.5rem, 4.4vw, 2.3rem);
+    line-height: 1.2;
+    color: var(--text-color);
+    margin-bottom: 22px;
+}
+
+.service-detail-text p {
+    color: var(--text-light);
+    line-height: 1.85;
+    font-size: clamp(1rem, 2.3vw, 1.05rem);
+    margin-bottom: 32px;
+}
+
+.service-detail-text .btn-primary {
+    box-shadow: 0 10px 25px rgba(122,12,12,.30);
+}
+
+.feature-list {
+    list-style: none;
+    display: grid;
+    gap: 16px;
+    margin-bottom: 36px;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.feature-list i {
+    margin-top: 4px;
+    color: var(--primary-color);
+}
+
+@media (max-width: 1200px) {
+
+    .service-detail {
+        padding-block: clamp(55px, 8vw, 100px);
+    }
+
+    .service-detail-grid {
+        gap: clamp(35px, 5vw, 70px);
+    }
+
+    .service-detail-img img {
+        height: clamp(220px, 38vw, 460px);
+    }
+
+    .service-detail-text p {
+        margin-bottom: 26px;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .service-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-detail.reverse .service-detail-grid {
+        direction: ltr;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .service-detail-img img {
+        height: clamp(210px, 45vw, 340px);
+    }
+}
+
+
+/*==========================================================
+VALORES
+==========================================================*/
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+.valor-card {
+    background: var(--white);
+    padding: 45px;
+    border-radius: 18px;
+    border-top: 4px solid var(--primary-color);
+    box-shadow: var(--shadow);
+    transition: .35s;
+}
+
+.valor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 45px rgba(0,0,0,.18);
+}
+
+.valor-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 26px;
+    box-shadow: 0 10px 22px rgba(122,12,12,.28);
+}
+
+.valor-card h3 {
+    margin-bottom: 20px;
+    font-size: clamp(1.25rem, 3.6vw, 1.6rem);
+}
+
+.valor-card p {
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+.valor-checklist {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #ececec;
+}
+
+.valor-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: .95rem;
+    color: var(--text-color);
+}
+
+.valor-checklist i {
+    color: var(--primary-color);
+    margin-top: 4px;
+    font-size: .85rem;
+}
+
+@media (max-width: 1200px) {
+
+    .valor-card {
+        padding: clamp(28px, 5vw, 45px);
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .valores-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .valor-card {
+        padding: 24px 18px;
+    }
+}
+
+
+/*==========================================================
+CÓMO SOLICITAR PRESUPUESTO
+==========================================================*/
+
+#solicitar {
+    display: block;
+}
+
+.solicitud-steps {
+    padding-block: 110px;
+    background: var(--background-color);
+}
+
+.solicitud-header {
+    max-width: 820px;
+    margin-bottom: 55px;
+}
+
+.solicitud-header h2 {
+    font-size: clamp(1.6rem, 4.8vw, 2.6rem);
+    line-height: 1.2;
+    color: var(--text-color);
+    margin-bottom: 22px;
+}
+
+.solicitud-header p {
+    color: var(--text-light);
+    font-size: clamp(1rem, 2.3vw, 1.1rem);
+    line-height: 1.8;
+}
+
+.solicitud-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.pasos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    max-width: 820px;
+}
+
+.paso-item h3 {
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-weight: var(--fw-semibold);
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.paso-item p {
+    color: var(--text-light);
+    font-size: clamp(1rem, 2.3vw, 1.05rem);
+    line-height: 1.8;
+}
+
+.paso-item p strong {
+    color: var(--primary-color);
+    font-weight: var(--fw-semibold);
+}
+
+.fotito img {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.solicitud-cta {
+    text-align: left;
+    margin-top: 60px;
+}
+
+@media (max-width: 1200px) {
+
+    .solicitud-steps {
+        padding-block: clamp(60px, 9vw, 110px);
+    }
+
+    .pasos-list {
+        gap: clamp(26px, 4vw, 38px);
+    }
+}
+
+@media (max-width: 900px) {
+
+    .solicitud-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .fotito {
+        order: -1;
+    }
+
+    .fotito img {
+        min-height: 260px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .solicitud-cta {
+        text-align: center;
+    }
+}

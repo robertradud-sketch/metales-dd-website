@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Proyectos Realizados de Estructuras Metálicas | METALES DD</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Proyectos reales de puertas, rejas, barandillas, estructuras y piezas a medida fabricados e instalados por METALES DD en la Comunidad de Madrid.">
+        <link rel="canonical" href="https://metalesdd.es/html/proyectos.html">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Proyectos Realizados de Estructuras Metálicas | METALES DD">
+        <meta property="og:description" content="Proyectos reales de puertas, rejas, barandillas, estructuras y piezas a medida fabricados e instalados por METALES DD en la Comunidad de Madrid.">
+        <meta property="og:url" content="https://metalesdd.es/html/proyectos.html">
+        <meta property="og:image" content="https://metalesdd.es/images/buenosLogos/loquito.webp">
+        <meta property="og:locale" content="es_ES">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Proyectos Realizados de Estructuras Metálicas | METALES DD">
+        <meta name="twitter:description" content="Proyectos reales de puertas, rejas, barandillas, estructuras y piezas a medida fabricados e instalados por METALES DD en la Comunidad de Madrid.">
+        <meta name="twitter:image" content="https://metalesdd.es/images/buenosLogos/loquito.webp">
+        <link rel="stylesheet" href="../css/base.css">
+        <link rel="stylesheet" href="../css/layout.css">
+        <link rel="stylesheet" href="../css/components.css">
+        <link rel="stylesheet" href="../css/pages/proyectos.css">
+        <link rel="icon" href="../images/buenosLogos/bien.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+
+                <a href="../index.html" class="logo">
+
+                    <img src="../images/buenosLogos/loquito.webp" alt="Logo METALES DD">
+
+                </a>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="menu" id="mainMenu">
+
+                    <li>
+                        <a href="tel:+34640207193" class="nav-phone">
+                            <i class="fa-solid fa-phone"></i>
+                            +34 640 207 193
+                        </a>
+                    </li>
+
+                    <li><a href="../index.html">Inicio</a></li>
+
+                    <li><a href="empresa.html">Empresa</a></li>
+
+                    <li><a href="servicios.html">Servicios</a></li>
+
+                    <li><a href="proyectos.html" class="active">Proyectos</a></li>
+
+                    <li><a href="contacto.html">Contacto</a></li>
+
+                </ul>
+
+            </nav>
+        </header>
+
+        <main>
+
+            <!--==========================================================
+                            HERO
+            ===========================================================-->
+
+            <section class="page-hero proyectos-hero">
+
+                <div class="overlay"></div>
+
+                <div class="hero-content">
+
+
+                    <h2>NUESTRO TRABAJO</h2>
+
+                    <h1 class="page-title">Un registro de proyectos ejecutados con precisión</h1>
+
+                    <p>
+                        Cada trabajo que fabricamos queda documentado aquí: el tipo de
+                        proyecto, dónde se instaló y qué necesidad resolvió. Así es
+                        como trabajamos.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!--==========================================================
+                            INTRODUCCIÓN
+            ===========================================================-->
+
+            <section class="container proyectos-intro">
+
+                <div class="section-title">
+
+                    <span>ARCHIVO DE PROYECTOS</span>
+
+                    <h2>Proyectos ejecutados por METALES DD</h2>
+
+                    <p>
+                        Una selección de trabajos realizados para particulares, comunidades
+                        de propietarios y empresas en Madrid y alrededores. Filtra por tipo
+                        de proyecto para ver el detalle de cada uno.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!--==========================================================
+                            FILTROS
+            ===========================================================-->
+
+            <nav class="proyectos-filtros">
+
+                <div class="container filtros-lista">
+
+                    <button class="filtro-btn active" data-filtro="todos">Todos los proyectos</button>
+                    <button class="filtro-btn" data-filtro="puertas">Puertas metálicas</button>
+                    <button class="filtro-btn" data-filtro="rejas">Rejas y cerramientos</button>
+                    <button class="filtro-btn" data-filtro="barandillas">Barandillas y escaleras</button>
+                    <button class="filtro-btn" data-filtro="estructuras">Estructuras metálicas</button>
+                    <button class="filtro-btn" data-filtro="automatismos">Automatismos</button>
+                    <button class="filtro-btn" data-filtro="piezas">Piezas a medida</button>
+                    <button class="filtro-btn" data-filtro="reparacion">Reparación de maquinaria</button>
+                    <button class="filtro-btn" data-filtro="vallados">Vallados y cercados</button>
+                    <button class="filtro-btn" data-filtro="soldadura">Trabajos de soldadura</button>
+
+                </div>
+
+            </nav>
+
+            <!--==========================================================
+                            CONTADOR
+            ===========================================================-->
+
+            <div class="container proyectos-contador">
+
+                <span>Mostrando <strong id="contador-num">8</strong> proyectos</span>
+
+                <span>Ordenados por fecha de finalización</span>
+
+            </div>
+
+            <!--==========================================================
+                            LISTA DE PROYECTOS
+            ===========================================================-->
+
+            <section class="container proyectos-lista">
+
+                <!-- 01 · Puertas -->
+                <article class="proyecto-fila" data-categoria="puertas">
+
+                    <div class="proyecto-media">
+
+                        <span class="proyecto-numero">01</span>
+
+                        <img loading="lazy" src="../images/WhatsApp Image 2026-07-29 at 15.55.34.webp" alt="Puerta metálica abatible a medida">
+
+                    </div>
+
+                    <div class="proyecto-info">
+
+                        <div class="proyecto-meta">
+                            <span class="proyecto-categoria">Puertas metálicas</span>
+                            <span class="punto"></span>
+                            <span class="proyecto-lugar">Getafe, Madrid</span>
+                        </div>
+
+                        <h2>Puerta abatible para vivienda unifamiliar</h2>
+
+                        <p>
+                            Fabricación e instalación de una puerta abatible de una hoja,
+                            con estructura reforzada y tratamiento antioxidante, adaptada
+                            al ancho de acceso de la parcela.
+                        </p>
+
+                        <div class="proyecto-datos">
+
+                            <div>
+                                <span>Duración</span>
+                                <strong>3 dias</strong>
+                            </div>
+
+                            <div>
+                                <span>Acabado</span>
+                                <strong>Pintado en gris forja</strong>
+                            </div>
+
+                            <div>
+                                <span>Año</span>
+                                <strong>2026</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- 02 · Rejas -->
+                <article class="proyecto-fila reverse" data-categoria="rejas">
+
+                    <div class="proyecto-media">
+
+                        <span class="proyecto-numero">02</span>
+
+                        <img loading="lazy" src="../images/rejas.webp" alt="Rejas de seguridad en ventanas">
+
+                    </div>
+
+                    <div class="proyecto-info">
+
+                        <div class="proyecto-meta">
+                            <span class="proyecto-categoria">Rejas y cerramientos</span>
+                            <span class="punto"></span>
+                            <span class="proyecto-lugar">Parla, Madrid</span>
+                        </div>
+
+                        <h2>Cerramiento de seguridad en planta baja</h2>
+
+                        <p>
+                            Instalación de rejas fijas en todas las ventanas de planta
+                            baja de una comunidad de propietarios, priorizando la
+                            protección sin renunciar a la estética de la fachada.
+                        </p>
+
+                        <div class="proyecto-datos">
+
+                            <div>
+                                <span>Duración</span>
+                                <strong>4 dias</strong>
+                            </div>
+
+                            <div>
+                                <span>Acabado</span>
+                                <strong>Pintura negra mate</strong>
+                            </div>
+
+                            <div>
+                                <span>Año</span>
+                                <strong>2026</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- 03 · Barandillas -->
+                <article class="proyecto-fila" data-categoria="barandillas">
+
+                    <div class="proyecto-media">
+
+                        <span class="proyecto-numero">03</span>
+
+                        <img loading="lazy" src="../images/WhatsApp Image 2026-07-29 at 15.53.37.webp" alt="Barandilla metálica de escalera">
+
+                    </div>
+
+                    <div class="proyecto-info">
+
+                        <div class="proyecto-meta">
+                            <span class="proyecto-categoria">Barandillas y escaleras</span>
+                            <span class="punto"></span>
+                            <span class="proyecto-lugar">Fuenlabrada, Madrid</span>
+                        </div>
+
+                        <h2>Barandilla interior para vivienda de dos plantas</h2>
+
+                        <p>
+                            Diseño y fabricación de una barandilla metálica para escalera
+                            exterior, combinando pletina y pasamanos continuo, con un
+                            acabado pensado para integrarse con la decoración existente.
+                        </p>
+
+                        <div class="proyecto-datos">
+
+                            <div>
+                                <span>Duración</span>
+                                <strong>2 días</strong>
+                            </div>
+
+                            <div>
+                                <span>Acabado</span>
+                                <strong>Pintura gris antracita</strong>
+                            </div>
+
+                            <div>
+                                <span>Año</span>
+                                <strong>2025</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- 04 · Estructuras -->
+                <article class="proyecto-fila reverse" data-categoria="estructuras">
+
+                    <div class="proyecto-media">
+
+                        <span class="proyecto-numero">04</span>
+
+                        <img loading="lazy" src="../images/puertaDeslizante.webp" alt="Estructura metálica industrial">
+
+                    </div>
+
+                    <div class="proyecto-info">
+
+                        <div class="proyecto-meta">
+                            <span class="proyecto-categoria">Estructuras metálicas</span>
+                            <span class="punto"></span>
+                            <span class="proyecto-lugar">Pinto, Madrid</span>
+                        </div>
+
+                        <h2>Estructura de acceso para establecimiento hostelero</h2>
+
+                        <p>
+                            Fabricación e instalación de una estructura metálica portante con puerta corredera 
+                            para facilitar el acceso a la zona de despensa de un restaurante. Diseño y fabricación 
+                            adaptados al espacio y a las necesidades del establecimiento.
+                        </p>
+
+                        <div class="proyecto-datos">
+
+                            <div>
+                                <span>Duración</span>
+                                <strong>1 semana</strong>
+                            </div>
+
+                            <div>
+                                <span>Acabado</span>
+                                <strong>Imprimación anticorrosiva</strong>
+                            </div>
+
+                            <div>
+                                <span>Año</span>
+                                <strong>2025</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- 05 · Automatismos -->
+                <article class="proyecto-fila" data-categoria="automatismos">
+
+                    <div class="proyecto-media">
+
+                        <span class="proyecto-numero">05</span>
+
+                        <img loading="lazy" src="../images/WhatsApp Image 2026-07-29 at 15.55.42(1).webp" alt="Automatización de puerta corredera">
+
+                    </div>
+
+                    <div class="proyecto-info">
+
+                        <div class="proyecto-meta">
+                            <span class="proyecto-categoria">Automatismos</span>
+                            <span class="punto"></span>
+                            <span class="proyecto-lugar">Leganés, Madrid</span>
+                        </div>
+
+                        <h2>Motorización de cancela corredera existente</h2>
+
+                        <p>
+                            Instalación de un motor para cancela corredera con mando a
+                            distancia y sistema de seguridad anti-aplastamiento, sobre
+                            una estructura ya instalada previamente.
+                        </p>
+
+                        <div class="proyecto-datos">
+
+                            <div>
+                                <span>Duración</span>
+                                <strong>2 semanas</strong>
+                            </div>
+
+                            <div>
+                                <span>Sistema</span>
+                                <strong>Motor + mando</strong>
+                            </div>
+
+                            <div>
+                                <span>Año</span>
+                                <strong>2026</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- 06 · Piezas a medida -->
+                <article class="proyecto-fila reverse" data-categoria="piezas">
+
+                    <div class="proyecto-media">
+
+                        <span class="proyecto-numero">06</span>
+
+                        <img loading="lazy" src="../images/piezasPers.webp" alt="Piezas metálicas personalizadas">
+
+                    </div>
+
+                    <div class="proyecto-info">
+
+                        <div class="proyecto-meta">
+                            <span class="proyecto-categoria">Piezas a medida</span>
+                            <span class="punto"></span>
+                            <span class="proyecto-lugar">Taller propio, Madrid</span>
+                        </div>
+
+                        <h2>Fabricación de piezas a medida para cerramiento de una parcela</h2>
+
+                        <p>
+                            Diseño y mecanizado de piezas metálicas personalizadas a partir de plano y de muestra física, 
+                            adaptadas a las necesidades específicas del proyecto.
+                        </p>
+
+                        <div class="proyecto-datos">
+
+                            <div>
+                                <span>Duración</span>
+                                <strong>4 días</strong>
+                            </div>
+
+                            <div>
+                                <span>Método</span>
+                                <strong>A medida por plano</strong>
+                            </div>
+
+                            <div>
+                                <span>Año</span>
+                                <strong>2026</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- 07 · Rejas -->
+                <article class="proyecto-fila" data-categoria="rejas">
+
+                    <div class="proyecto-media">
+
+                        <span class="proyecto-numero">07</span>
+
+                        <img loading="lazy" src="../images/WhatsApp Image 2026-08-10 at 23.49.51.webp" alt="Cerramiento metálico para terraza">
+
+                    </div>
+
+                    <div class="proyecto-info">
+
+                        <div class="proyecto-meta">
+                            <span class="proyecto-categoria">Rejas y cerramientos</span>
+                            <span class="punto"></span>
+                            <span class="proyecto-lugar">Alcorcón, Madrid</span>
+                        </div>
+
+                        <h2>Cerramiento de terraza en primera planta</h2>
+
+                        <p>
+                            Fabricación de un cerramiento metálico para proteger el acceso a una
+                            terraza de vivienda, respetando la normativa de la comunidad y
+                            adaptándose a la estructura original del edificio.
+                        </p>
+
+                        <div class="proyecto-datos">
+
+                            <div>
+                                <span>Duración</span>
+                                <strong>1 semana</strong>
+                            </div>
+
+                            <div>
+                                <span>Acabado</span>
+                                <strong>Negro brillo</strong>
+                            </div>
+
+                            <div>
+                                <span>Año</span>
+                                <strong>2025</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- 08 · Puertas -->
+                <article class="proyecto-fila reverse" data-categoria="puertas">
+
+                    <div class="proyecto-media">
+
+                        <span class="proyecto-numero">08</span>
+
+                        <img loading="lazy" src="../images/WhatsApp Image 2026-07-29 at 15.55.39.webp" alt="Puerta corredera industrial">
+
+                    </div>
+
+                    <div class="proyecto-info">
+
+                        <div class="proyecto-meta">
+                            <span class="proyecto-categoria">Puertas metálicas</span>
+                            <span class="punto"></span>
+                            <span class="proyecto-lugar">Móstoles, Madrid</span>
+                        </div>
+
+                        <h2>Cerramiento metálico de lamas horizontales</h2>
+
+                        <p>
+                            Diseño y fabricación de un cerramiento a medida con lamas horizontales, 
+                            combinando privacidad, ventilación y un acabado limpio integrado en la fachada.
+                        </p>
+
+                        <div class="proyecto-datos">
+
+                            <div>
+                                <span>Duración</span>
+                                <strong>1 semana</strong>
+                            </div>
+
+                            <div>
+                                <span>Acabado</span>
+                                <strong>Pintado en gris antracita</strong>
+                            </div>
+
+                            <div>
+                                <span>Año</span>
+                                <strong>2025</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- 09 · Reparación de maquinaria -->
+                <article class="proyecto-fila" data-categoria="reparacion">
+
+                    <div class="proyecto-media proyecto-media-placeholder">
+
+                        <span class="proyecto-numero">09</span>
+
+                        <img loading="lazy" src="../images/cajaAdel16:9.webp" alt="reparacionMaquinaria">
+
+                    </div>
+
+                    <div class="proyecto-info">
+
+                        <div class="proyecto-meta">
+                            <span class="proyecto-categoria">Reparación de maquinaria</span>
+                            <span class="punto"></span>
+                            <span class="proyecto-lugar">Madrid</span>
+                        </div>
+
+                        <h2>Reparación de maquinaria industrial</h2>
+
+                        <p>
+                            Diagnóstico y reparación mediante soldadura de piezas y
+                            componentes metálicos dañados, devolviendo la maquinaria
+                            a su funcionamiento habitual.
+                        </p>
+
+                        <div class="proyecto-datos">
+
+                            <div>
+                                <span>Duración</span>
+                                <strong>Pendiente</strong>
+                            </div>
+
+                            <div>
+                                <span>Acabado</span>
+                                <strong>Pendiente</strong>
+                            </div>
+
+                            <div>
+                                <span>Año</span>
+                                <strong>2026</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- 10 · Vallados y cercados -->
+                <article class="proyecto-fila reverse" data-categoria="vallados">
+
+                    <div class="proyecto-media proyecto-media-placeholder">
+
+                        <span class="proyecto-numero">10</span>
+
+                        <img loading="lazy" src="../images/WhatsApp Image 2026-07-29 at 15.55.55.webp" alt="valladoPerimetral">
+
+                    </div>
+
+                    <div class="proyecto-info">
+
+                        <div class="proyecto-meta">
+                            <span class="proyecto-categoria">Vallados y cercados</span>
+                            <span class="punto"></span>
+                            <span class="proyecto-lugar">Madrid</span>
+                        </div>
+
+                        <h2>Vallado perimetral para parcela</h2>
+
+                        <p>
+                            Fabricación e instalación de vallado metálico perimetral,
+                            resistente a la intemperie y adaptado al desnivel del terreno.
+                        </p>
+
+                        <div class="proyecto-datos">
+
+                            <div>
+                                <span>10 días</span>
+                                <strong>Pendiente</strong>
+                            </div>
+
+                            <div>
+                                <span>Acabado</span>
+                                <strong>Gris mate</strong>
+                            </div>
+
+                            <div>
+                                <span>Año</span>
+                                <strong>2026</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- 11 · Trabajos de soldadura -->
+                <article class="proyecto-fila" data-categoria="soldadura">
+
+                    <div class="proyecto-media proyecto-media-placeholder">
+
+                        <span class="proyecto-numero">11</span>
+
+                        <img loading="lazy" src="../images/escalera.webp" alt="estanteria">
+
+                    </div>
+
+                    <div class="proyecto-info">
+
+                        <div class="proyecto-meta">
+                            <span class="proyecto-categoria">Trabajos de soldadura</span>
+                            <span class="punto"></span>
+                            <span class="proyecto-lugar">Madrid</span>
+                        </div>
+
+                        <h2>Modificación y soldadura de escalera metálica</h2>
+
+                        <p>
+                            Modificación y adaptación de una escalera metálica existente mediante trabajos de soldadura, 
+                            incorporando y ajustando elementos de protección y barandillas para adaptarla a las necesidades del espacio.
+                        </p>
+
+                        <div class="proyecto-datos">
+
+                            <div>
+                                <span>Duración</span>
+                                <strong>2 días</strong>
+                            </div>
+
+                            <div>
+                                <span>Acabado</span>
+                                <strong>Galvanizado</strong>
+                            </div>
+
+                            <div>
+                                <span>Año</span>
+                                <strong>2026</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- Mensaje sin resultados -->
+                <div class="proyectos-vacio" id="proyectos-vacio">
+
+                    <i class="fa-solid fa-box-open"></i>
+
+                    <p>No hay proyectos disponibles en esta categoría por ahora.</p>
+
+                </div>
+
+            </section>
+
+            <!--==========================================================
+                            CTA FINAL
+            ===========================================================-->
+
+            <section class="empresa-cta">
+
+                <div class="overlay"></div>
+
+                <div class="cta-content reveal-up">
+
+                    <span>¿QUIERES SER EL SIGUIENTE PROYECTO?</span>
+
+                    <h2>Cuéntanos qué necesitas fabricar</h2>
+
+                    <p>
+                        Analizamos tu caso y te preparamos un presupuesto claro,
+                        sin compromiso, adaptado a tu proyecto.
+                    </p>
+
+                    <a href="contacto.html" class="btn-primary">Solicitar presupuesto</a>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!--Footer-->
+        <footer>
+
+            <div class="container footer-container">
+
+                <!-- Empresa -->
+                <div class="footer-col">
+
+                    <img loading="lazy" src="../images/buenosLogos/bien.png" alt="Logo METALES DD">
+
+                    <h3>METALES DD</h3>
+
+                    <p>
+                        Especialistas en soldadura, fabricación metálica,
+                        reparaciones y montaje de estructuras.
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="https://www.facebook.com/metalesdd" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+
+                        <a href="https://www.youtube.com/channel/UCLQ_d3rbsghxSwNuMJCwNZQ" class="social-btn" aria-label="YouTube" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+
+                        <a href="https://x.com/METALESDD" class="social-btn" aria-label="Twitter" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/metalesdd/" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Enlaces -->
+                <div class="footer-col">
+
+                    <h3>Enlaces</h3>
+
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="empresa.html">Empresa</a></li>
+                        <li><a href="proyectos.html">Proyectos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+
+                </div>
+
+                <!-- Contacto -->
+                <div class="footer-col">
+
+                    <h3>Contacto</h3>
+
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        +34 640 207 193
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-envelope"></i>
+                        info@metalesdd.es
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Madrid, España
+                    </p>
+
+                </div>
+
+                <!-- Ubicación -->
+                <div class="footer-col">
+
+                    <h3>Ubicación</h3>
+
+                    <div class="map-wrapper">
+                        <iframe class="mapa-iframe" data-src="https://maps.google.com/maps?q=Calle%20Villaverde%2C%2028981%20Parla%2C%20Madrid&output=embed"
+                            width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+                        </iframe>
+                        <div class="map-placeholder" id="mapPlaceholder">
+                            <p>Mapa desactivado. Acepta las cookies de Google Maps para verlo.</p>
+                            <button type="button" class="map-placeholder-btn" id="mapPlaceholderBtn">Gestionar cookies</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr>
+
+            <p class="copyright">
+                © 2026 METALES DD · Todos los derechos reservados.
+            </p>
+
+        </footer>
+
+
+
+    <script src="../js/main.js"></script>
+    <script src="../js/proyectos.js"></script>
+    <button id="cookie-icon" class="cookie-icon" aria-label="Preferencias de cookies">
+        <i class="fa-solid fa-shield-halved"></i>
+    </button>
+
+    <div id="cookie-banner" class="cookie-banner">
+        <p>Usamos cookies de Google Maps para mostrarte nuestra ubicación. ¿Aceptas su uso? Consulta la <a href="privacidad.html">política de privacidad</a>.</p>
+        <div class="cookie-buttons">
+            <button id="cookie-accept">Aceptar</button>
+            <button id="cookie-reject">Rechazar</button>
+        </div>
+    </div>
+
+    </body>
+</html>

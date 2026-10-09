@@ -1,0 +1,369 @@
+/*==========================================================
+PÁGINA · PROYECTOS (html/proyectos.html)
+Hero, introducción, barra de filtros, contador y listado
+de proyectos.
+
+El filtrado lo hace js/proyectos.js añadiendo y quitando
+la clase .oculto a cada fila.
+==========================================================*/
+
+
+/*==========================================================
+HERO
+==========================================================*/
+
+.proyectos-hero {
+    background-image: url("../../images/techo.webp");
+}
+
+
+/*==========================================================
+INTRODUCCIÓN
+==========================================================*/
+
+.proyectos-intro {
+    /* padding-block, nunca el atajo: comparte elemento con
+       .container y el atajo le borraría el margen lateral */
+    padding-block: 130px 60px;
+}
+
+.proyectos-intro .section-title {
+    max-width: 900px;
+    margin: 0;
+    text-align: left;
+}
+
+@media (max-width: 1200px) {
+
+    .proyectos-intro {
+        padding-block: clamp(105px, 14vw, 130px) 40px;
+    }
+}
+
+/*==========================================================
+BARRA DE FILTROS
+
+Es sticky: se queda pegada bajo la cabecera fija mientras
+se recorre el listado.
+==========================================================*/
+
+.proyectos-filtros {
+    position: sticky;
+    top: var(--header-height);
+    z-index: 20;
+    background: var(--white);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filtros-lista {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    gap: 36px;
+    padding-block: 14px;
+}
+
+.filtro-btn {
+    position: relative;
+    background: none;
+    border: none;
+    padding: 22px 0;
+    font-family: var(--font-text);
+    font-size: .92rem;
+    font-weight: var(--fw-medium);
+    letter-spacing: .5px;
+    color: var(--text-light);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.filtro-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+.filtro-btn:hover {
+    color: var(--text-color);
+}
+
+.filtro-btn.active {
+    color: var(--primary-color);
+}
+
+.filtro-btn.active::after {
+    transform: scaleX(1);
+}
+
+@media (max-width: 900px) {
+
+    /* En vez de partirse en tres o cuatro filas, la barra se
+       desliza en horizontal como unas pestañas */
+    .filtros-lista {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 24px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .filtros-lista::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filtro-btn {
+        padding: 16px 0;
+    }
+}
+
+/*==========================================================
+CONTADOR DE RESULTADOS
+==========================================================*/
+
+.proyectos-contador {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-block: 36px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.proyectos-contador span {
+    color: var(--text-light);
+    font-size: .95rem;
+}
+
+.proyectos-contador strong {
+    color: var(--primary-color);
+}
+
+@media (max-width: 1200px) {
+
+    .proyectos-contador {
+        padding-block: 30px 18px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .proyectos-contador {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+}
+
+
+/*==========================================================
+LISTADO DE PROYECTOS
+==========================================================*/
+
+.proyecto-fila {
+    position: relative;
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 70px;
+    align-items: center;
+    padding-block: 80px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Filas invertidas: la foto pasa a la derecha */
+.proyecto-fila.reverse {
+    grid-template-columns: 1.1fr .9fr;
+}
+
+.proyecto-fila.reverse .proyecto-media {
+    order: 2;
+}
+
+.proyecto-fila.reverse .proyecto-info {
+    order: 1;
+}
+
+/* La añade y la quita js/proyectos.js al filtrar */
+.proyecto-fila.oculto {
+    display: none;
+}
+
+.proyecto-media {
+    position: relative;
+    overflow: hidden;
+}
+
+.proyecto-media img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(35%);
+    transition: filter .5s ease;
+}
+
+.proyecto-fila:hover .proyecto-media img {
+    filter: grayscale(0%);
+}
+
+.proyecto-numero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: var(--primary-color);
+    color: var(--white);
+    font-family: var(--font-title);
+    font-size: .85rem;
+    font-weight: var(--fw-medium);
+    letter-spacing: 1px;
+    padding: 10px 18px;
+}
+
+.proyecto-info {
+    max-width: 560px;
+}
+
+.proyecto-info h2 {
+    font-size: clamp(1.4rem, 4.4vw, 2.1rem);
+    color: var(--text-color);
+    margin-bottom: 20px;
+    line-height: 1.25;
+}
+
+.proyecto-info p {
+    font-size: clamp(1rem, 2.3vw, 1.05rem);
+    line-height: 1.85;
+    color: var(--text-light);
+    margin-bottom: 28px;
+}
+
+.proyecto-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.proyecto-categoria {
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-size: .8rem;
+    font-weight: var(--fw-medium);
+    color: var(--primary-color);
+}
+
+.proyecto-meta .punto {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--border-color);
+}
+
+.proyecto-lugar {
+    font-size: .85rem;
+    color: var(--text-light);
+}
+
+.proyecto-datos {
+    display: flex;
+    gap: 40px;
+    padding-top: 26px;
+    border-top: 1px solid var(--border-color);
+}
+
+.proyecto-datos div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.proyecto-datos span {
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-light);
+}
+
+.proyecto-datos strong {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: var(--fw-medium);
+}
+
+@media (max-width: 1200px) {
+
+    .proyecto-fila,
+    .proyecto-fila.reverse {
+        padding-block: clamp(45px, 7vw, 80px);
+        gap: clamp(26px, 4vw, 70px);
+    }
+
+    .proyecto-media img {
+        height: clamp(210px, 42vw, 420px);
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .proyecto-fila,
+    .proyecto-fila.reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .proyecto-fila.reverse .proyecto-media,
+    .proyecto-fila.reverse .proyecto-info {
+        order: initial;
+    }
+
+    .proyecto-info {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .proyecto-datos {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .proyecto-numero {
+        font-size: .78rem;
+        padding: 8px 14px;
+    }
+}
+
+
+/*==========================================================
+MENSAJE CUANDO UN FILTRO NO DEVUELVE NADA
+==========================================================*/
+
+.proyectos-vacio {
+    display: none;
+    text-align: center;
+    padding-block: 100px;
+    color: var(--text-light);
+}
+
+.proyectos-vacio.visible {
+    display: block;
+}
+
+.proyectos-vacio i {
+    font-size: 2rem;
+    color: var(--border-color);
+    margin-bottom: 18px;
+}
+
+.proyectos-vacio p {
+    font-size: 1.1rem;
+}
